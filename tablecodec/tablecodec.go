@@ -99,7 +99,7 @@ func startWithTablePrefix(key kv.Key) bool {
 }
 
 func startWithRecordPrefixSep(key kv.Key) bool {
-	return key[0] == tablePrefixSep[0] && key[1] == recordPrefixSep[1]
+	return key[0] == recordPrefixSep[0] && key[1] == recordPrefixSep[1]
 }
 
 // appendTableIndexPrefix appends table index prefix  "t[tableID]_i".
