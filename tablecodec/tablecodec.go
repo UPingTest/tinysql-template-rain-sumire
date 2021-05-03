@@ -136,7 +136,7 @@ func DecodeIndexKeyPrefix(key kv.Key) (tableID int64, indexID int64, indexValues
 		return 0,0,nil,errInvalidIndexKey.GenWithStack("invalid record key - %q",key)
 	}
 	key = key[recordPrefixSepLength:]
-	key,handle,err = codec.DecodeInt(key)
+	key,indexID,err = codec.DecodeInt(key)
 	if err != nil {
 		return 0,0,nil,errors.Trace(err)
 	}
