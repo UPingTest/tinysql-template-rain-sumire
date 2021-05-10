@@ -140,7 +140,7 @@ func DecodeIndexKeyPrefix(key kv.Key) (tableID int64, indexID int64, indexValues
 	if err != nil {
 		return 0,0,nil,errors.Trace(err)
 	}
-	return tableID, indexID, indexValues, nil
+	return tableID, indexID, key, nil
 }
 
 func startWithIndexPrefixSep(key kv.Key) bool {
